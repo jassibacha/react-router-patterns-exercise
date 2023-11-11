@@ -29,26 +29,42 @@ export default function AddColor({ setColors }: AddColorProps) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
-            <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-            />
+        <>
+            <h1>Add A New Color</h1>
+            <form onSubmit={handleSubmit} className="mb-3">
+                <div className="mb-3">
+                    <label htmlFor="name" className="form-label">
+                        Name:
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <label htmlFor="color">Color:</label>
-            <input
-                type="color"
-                id="color"
-                name="color"
-                value={formData.color}
-                onChange={handleChange}
-            />
+                <div className="mb-3">
+                    <label htmlFor="color" className="form-label">
+                        Color:
+                    </label>
+                    <input
+                        type="color"
+                        className="form-control form-control-color"
+                        id="color"
+                        name="color"
+                        value={formData.color}
+                        onChange={handleChange}
+                        title="Choose your color"
+                    />
+                </div>
 
-            <button>Add a new color!</button>
-        </form>
+                <button type="submit" className="btn btn-primary">
+                    Add a new color!
+                </button>
+            </form>
+        </>
     );
 }
